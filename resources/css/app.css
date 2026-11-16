@@ -1,0 +1,164 @@
+/* =========================================
+   IMPORT FONTS
+========================================= */
+
+
+@import '@fontsource-variable/plus-jakarta-sans';
+@import '@fontsource-variable/fraunces';
+
+
+/* =========================================
+   TAILWIND CSS
+========================================= */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+
+[x-cloak] {
+    display: none !important;
+}
+
+
+/* =========================================
+   BASE LAYER
+========================================= */
+
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+        @apply bg-cream font-sans text-ink antialiased;
+    }
+
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-display;
+    }
+
+
+    ::selection {
+        @apply bg-ochre/60;
+    }
+}
+
+
+/* =========================================
+   COMPONENT LAYER
+========================================= */
+
+
+@layer components {
+
+
+    /* Background Pattern */
+    .bg-dots {
+        background-image: radial-gradient(
+            rgba(36, 33, 27, 0.16) 1px,
+            transparent 1px
+        );
+        background-size: 22px 22px;
+    }
+
+
+    /* Card Component */
+    .card {
+        @apply rounded-2xl border-2 border-ink bg-paper shadow-hard;
+    }
+
+
+    /* Button Components */
+    .btn,
+    .btn-primary,
+    .btn-clay,
+    .btn-light {
+        @apply inline-flex items-center justify-center gap-2
+            rounded-xl border-2 border-ink px-4 py-2
+            text-sm font-bold shadow-hard-sm transition
+            hover:-translate-y-0.5 hover:shadow-hard
+            active:translate-y-0 active:shadow-none;
+    }
+
+
+    .btn-primary {
+        @apply bg-moss text-paper;
+    }
+
+
+    .btn-clay {
+        @apply bg-clay text-paper;
+    }
+
+
+    .btn-light {
+        @apply bg-paper text-ink hover:bg-sand;
+    }
+
+
+    .btn-sm {
+        @apply px-2.5 py-1 text-xs;
+    }
+
+
+    /* Input Component */
+    .input {
+        @apply w-full rounded-xl border-2 border-ink
+            bg-white px-3 py-2 text-sm
+            placeholder:text-ink/40
+            focus:outline-none
+            focus:ring-4 focus:ring-ochre/50;
+    }
+
+
+    /* Label Component */
+    .label {
+        @apply mb-1 block text-xs font-extrabold
+            uppercase tracking-wider text-ink/70;
+    }
+
+
+    /* Badge Component */
+    .badge {
+        @apply inline-flex items-center rounded-full
+            border-2 border-ink px-2.5 py-0.5
+            text-[11px] font-extrabold uppercase tracking-wide;
+    }
+
+
+    /* Table Component */
+    .tbl {
+        @apply w-full text-left text-sm;
+    }
+
+
+    .tbl th {
+        @apply whitespace-nowrap border-b-2 border-ink
+            bg-sand px-3 py-2
+            text-[11px] font-extrabold uppercase tracking-wider;
+    }
+
+
+    .tbl td {
+        @apply border-b border-ink/15
+            px-3 py-2.5 align-top;
+    }
+
+
+    .tbl tbody tr:hover {
+        @apply bg-ochre/10;
+    }
+}
